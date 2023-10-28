@@ -25,7 +25,6 @@ public class UserService {
 
     @Transactional
     public User register(UserRegisterRequest request) {
-        System.out.println("sebelum validate");
         validationService.validate(request);
 
         if (userRepository.existsById(request.getUsername())) {
