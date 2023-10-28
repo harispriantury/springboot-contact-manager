@@ -17,18 +17,17 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    private String id;
+    private String username;
 
     private String name;
+
 
     private String password;
 
     private String token;
 
     @Column(name = "token_expired_at")
-    private String tokenExpiredAt;
+    private Long tokenExpiredAt;
 
     @OneToMany(mappedBy = "user")
     private List<Contact> contacts;
