@@ -1,5 +1,4 @@
-package id.restful.springboot_contact_management.dto;
-
+package id.restful.springboot_contact_management.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -9,11 +8,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class UserRegisterRequest {
+public class UserLoginReqeust {
     @NotBlank
-    @Size(max = 50)
+    @Size(max = 100)
     private String username;
+
+    @NotBlank
+    @Size(max = 100)
+    private String password;
 }
